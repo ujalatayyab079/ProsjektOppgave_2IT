@@ -1,2 +1,8 @@
 # ProsjektOppgave_2IT
-ProsjektOppgave Høst - 2IT : I dette prosjektet skal jeg lage en nettbutikk. Nettbutikken skal vise ulike produkter (jeg har ikke bestemt ennå hvilke produkter den skal inneholde). For å lage prosjektet skal jeg bruke: Raspberry Pi som webserver for å kjøre prosjektet. MariaDB for å lagre produkter, brukere og handlekurv. Flask (Python) for å lage nettsiden og koble den til databasen. HTML og CSS for å designe nettsiden
+Jeg skal lage en **nettbutikk** som viser ulike produkter innen **art supplies** (f.eks. tusjer, fargeblyanter, maling, pensler, papir). Produktene og navnet på butikken er midlertidige og kan endres senere.
+
+Jeg bruker **Raspberry Pi** som webserver, **MariaDB** for lagring av data, **Flask (Python)** til å lage nettsiden og **HTML/CSS** for designet.
+
+## Prototype / MVP
+Første versjon (MVP) viser noen produkter med navn, pris og bilde på forsiden.  
+Handlekurv og innlogging vil bli lagt til senere.
