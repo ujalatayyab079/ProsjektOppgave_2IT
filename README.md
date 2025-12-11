@@ -18,7 +18,7 @@ Handlekurv og innlogging legges til senere når nettsiden fungerer.
 - **Utvikling:** Python, HTML/CSS, datastrukturer, database , Backend 
 - **Brukerstøtte:** Brukerveiledning, dokumentasjon på GitHub, testing
 
-#PROCESS
+## **PROCESS**
 ## 1. Server og webapplikasjon
 - **Raspberry Pi** brukes som webserver for å kjøre nettsiden.  
 - **Flask (Python)** brukes til å lage webapplikasjonen, som håndterer **HTTP-forespørsler** fra nettlesere (f.eks. når en bruker åpner nettsiden eller klikker på et produkt).  
