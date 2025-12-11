@@ -1,0 +1,538 @@
+  HTML
+  
+  <div class="boxes-container">
+        <div class="container1">
+            <img src="/Graphics/Logoer_Plakater/LogoVektorNettbutikk copy.svg" alt="">
+        </div>
+        <div class="container2"></div>
+    </div>
+</div>
+
+<div>
+    <div class="white-container"></div>
+</div>
+
+
+CSS 
+.boxes-container {
+    display: flex;                
+    gap: 50px;  
+    flex-wrap: wrap;                 
+}
+
+.container1 {
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    width: 30%;
+    max-width: 250px;
+    height: 510px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+
+.container2 {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    width: 700px;
+    height: 400px;
+    margin-top: 110px; /* For gap*/
+    
+
+}
+
+.white-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bcbbb2;
+    margin-top: 1000px;
+    width: 1143px;
+    height: 300px;
+   
+}
+
+
+CSS 2 (VIKTIG)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4C5A6B;
+     background: linear-gradient(135deg, #d0dceb, #9fb2c9, #4c5a6b);
+    /* Gradient */
+    font-family: Arial, sans-serif;
+}
+
+/* Background */
+.background {
+    width: 100%;
+    height: 100vh;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} 
+
+
+/* NAVBAR */
+.navbar {
+    width: 97%;
+    height: 60px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* Left side */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-logo {
+    width: 210px;
+    height: auto;
+}
+
+.menu-btn {
+    font-size: 28px;
+    cursor: pointer;
+    color: #243143;
+}
+
+/* Search bar med knapp */
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+}
+
+.search-form {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.479);
+    border: 50px;
+    border-color: #000;
+    border: 1px solid ;
+}
+
+.search-bar {
+    border: none;
+    padding: 0 15px;
+    height: 35px;
+    outline: none;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    flex: 1;
+}
+
+.search-bar::placeholder {
+    color: #243143;
+    opacity: 1;
+}
+
+.search-btn {
+    border: none;
+    background-color: #243143;
+    height: 35px;
+    width: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+}
+
+.search-btn:hover {
+    background-color: #0a182b;
+}
+
+/* Høyre ikoner */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 25px;
+    color: #243143;
+    cursor: pointer;
+}
+
+.nav-right i {
+    position: relative;
+    /* Viktig for ::after */
+    cursor: pointer;
+}
+
+.nav-right i::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* Plassering under ikonet */
+    width: 0;
+    height: 3px;
+    /* Tykkelsen på linjen */
+    background: linear-gradient(to right, #5b7081a9, #ffffff, #5b7081a9);
+    transition: width 0.3s ease;
+}
+
+.nav-right i:hover::after {
+    width: 100%;
+    /* Linjen fyller ikonet på hover */
+}
+
+
+
+/* Side menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* start fra venstre kant */
+    width: 180px;
+    /* juster bredden etter behov */
+    height: 100%;
+    background: #4c5a6bcf;
+    backdrop-filter: blur(10px);
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 90%;
+    padding-left: 30px;
+    transition: transform 0.4s ease;
+    transform: translateX(-100%);
+    /* skjult til venstre */
+}
+
+.side-menu.open {
+    transform: translateX(0);
+    /* vises */
+}
+
+.side-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    /* Viktig for ::after */
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.side-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(to right, #5b7081a9, #ffffff, #5b7081a9);
+    transition: width 0.4s ease;
+}
+
+.side-menu a:hover::after {
+    width: 50%;
+}
+
+/* Sections */
+#home-section,
+#favorites-section,
+#cart-section {
+    padding: 100px 20px 20px 20px;
+    font-size: 28px;
+}
+
+
+/* Overskrifter og tekst */
+.hero-box {
+    position: absolute;
+    /* Oppå bakgrunn */
+    top: 100px;
+    /* Rett under navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    padding: 50px;
+    max-width: 1200px;
+    background: linear-gradient(to right, #d3e6f6, #c1d6f5);
+    border-radius: 10px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* Sørger for responsivitet */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex: 1 1 500px;
+    /* Tar plass, men begrenset */
+}
+
+.hero-text h1 {
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+.hero-text h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hero-text button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #5b7081a9, #31363aa9);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.hero-text button:hover {
+    background: linear-gradient(90deg, #0e633c, #0e633b3c);
+}
+
+.hero-image {
+    flex: 1 1 400px;
+    /* Begrenser størrelsen på bildet */
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 425px;
+    border-radius: 15px;
+    display: block;
+    /* Sikrer at bildet holder seg inne i div */
+
+
+}
+/*Product*/
+
+.main-container {
+    padding-top: 50px;
+    width: 100%;
+    max-width: 2000px; /* litt mindre, ser bedre ut */
+    margin: 0 auto;    /* SENTRERER CONTAINEREN */
+    background: linear-gradient(to right, #6d99b680, #ffffff65);
+    padding-bottom: 50px;
+}
+
+/* Container for alle produktene */
+.product-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Selve produktboksen */
+.product-card {
+    background: rgba(255, 255, 255, 0.15);
+    /* transparent box */
+    backdrop-filter: blur(10px);
+    /* glass effekt */
+    border-radius: 18px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Produktbilde */
+.product-img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Navn */
+.product-name {
+    font-size: 20px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Beskrivelse */
+.product-desc {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+/* Pris */
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Kjøp knapp */
+.buy-btn {
+    background: #48e24d;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.buy-btn:hover {
+    background: #6de043;
+}
+
+/*footer*/
+.footer {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto; /* SENTRER FOOTER */
+    background: linear-gradient(135deg, #d0dceb, #9fb2c9, #4c5a6b);
+    padding: 50px 70px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    color: #000;
+    margin-top: 80px;
+}
+
+/* Seksjon titler */
+.footer-section h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2d3a4b;
+}
+
+.footer-section p {
+    margin: 6px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.footer-section p:hover {
+    color: #3e5c79;
+    transform: translateX(3px);
+}
+
+/* Logo nederst */
+.footer-bottom {
+    grid-column: 1 / -1;
+    /* gjør at den går over hele bredden */
+    text-align: center;
+
+}
+
+.footer-bottom img {
+    width: 150px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #2d3a4b;
+}
+
+
+
+PRODUCT KODEN
+
+
+
+<section class="product-section">
+    <h2 class="section-title">Our Products</h2>
+    <div class="product-grid">
+        <!-- Produkt 1 -->
+        <div class="product-card">
+            <div class="product-image" style="background-image:url('/static/Graphics/Stickers/sticker1.jpg')"></div>
+            <div class="product-info">
+                <h3>Anime Stickers</h3>
+                <p>Fun and colorful stickers inspired by popular anime - perfect for decorating laptops, phones, or notebooks.</p>
+                <span class="price">40,-</span>
+                <div class="product-icons">
+                    <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
+                </div>
+                <button class="buy-btn" onclick="toggleBuy(this)">Buy now</button>
+            </div>
+        </div>
+
+        <!-- Produkt 2 -->
+        <div class="product-card">
+            <div class="product-image" style="background-image:url('/static/Graphics/Stickers/sticker2.jpg')"></div>
+            <div class="product-info">
+                <h3>Car Stickers</h3>
+                <p>High-quality glittery stickers for car enthusiasts, perfect for decorating any surface.</p>
+                <span class="price">50,-</span>
+                <div class="product-icons">
+                    <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
+                </div>
+                <button class="buy-btn" onclick="toggleBuy(this)">Buy now</button>
+            </div>
+        </div>
+
+        <!-- Produkt 3 -->
+        <div class="product-card">
+            <div class="product-image" style="background-image:url('/static/Graphics/Stickers/Sticker3.jpg')"></div>
+            <div class="product-info">
+                <h3>Doereman Stickers</h3>
+                <p>Kawaii-style stickers with adorable designs and vibrant colors for planners and notebooks.</p>
+                <span class="price">30,-</span>
+                <div class="product-icons">
+                    <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
+                </div>
+                <button class="buy-btn" onclick="toggleBuy(this)">Buy now</button>
+            </div>
+        </div>
+
+        <!-- Produkt 4 -->
+        <div class="product-card">
+            <div class="product-image" style="background-image:url('/static/Graphics/Stickers/sticker4.jpg')"></div>
+            <div class="product-info">
+                <h3>We Bare Bears</h3>
+                <p>Cute character stickers featuring We Bare Bears - ideal for kids and fans of the show.</p>
+                <span class="price">50,-</span>
+                <div class="product-icons">
+                    <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
+                </div>
+                <button class="buy-btn" onclick="toggleBuy(this)">Buy now</button>
+            </div>
+        </div>
+    </div>

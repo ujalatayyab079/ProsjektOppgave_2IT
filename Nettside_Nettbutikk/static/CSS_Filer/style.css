@@ -1,0 +1,235 @@
+/* CSS KODE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background:#ffffff;
+    overflow-x: hidden;
+}
+
+/* ---------------- Logo på nettleseren ---------------- */
+.logo-icon-up{
+    width: 100%;
+    height: auto;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+    border-bottom: 2px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    z-index: 900;
+}
+
+/* LEFT SIDE */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu-btn i {
+    font-size: 28px;
+    cursor: pointer;
+    color: #2d3a4b;
+}
+
+.nav-logo {
+    cursor: pointer;
+    width: 210px;
+    height: auto;
+}
+
+/* CENTER SEARCH */
+.nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    width: 60%;
+    max-width: 500px;
+    display: flex;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 12px 18px;
+    border: 2px solid #c7cdd6;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    font-size: 15px;
+    background: #ffffff;
+}
+
+.search-btn {
+    background: #2d3a4b;
+    border: none;
+    padding: 0 23px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.search-btn i {
+    color: white;
+    font-size: 18px;
+}
+
+/* RIGHT ICONS */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-right i {
+    font-size: 26px;
+    cursor: pointer;
+    color: #2d3a4b;
+    transition: 0.2s ease;
+}
+
+.nav-right i:hover {
+    opacity: 0.7;
+}
+
+/* ---------------- SIDE MENU ---------------- */
+.side-menu {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -260px;
+    background: #ffffff;
+    border-right: 2px solid #e5e7eb;
+    padding-top: 120px;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    z-index: 900;
+}
+
+
+.side-menu.open {
+    left: 0;
+}
+
+.side-menu a {
+    display: block;
+    padding: 20px 30px;
+    font-size: 18px;
+    color: #2d3a4b;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.side-menu a:hover {
+    background: #f3f4f6;
+    padding-left: 35px;
+}
+
+/* OVERLAY når menyen er open */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    display: none;
+    z-index: 800;
+}
+
+/* Når menyen er open */
+.side-menu.open + .overlay {
+    display: block;
+}
+
+/* Glidende animasjon */
+.side-menu {
+    transition: 0.3s ease;
+}
+
+
+
+
+/* ---------------- FOOTER---------------- */
+
+/*footer*/
+.footer {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #d0dceb, #9fb2c9, #4c5a6b);
+    padding: 50px 70px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    color: #000;
+    margin-top: 80px;
+}
+
+/* Seksjon titler */
+.footer-section h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2d3a4b;
+}
+
+.footer-section p {
+    margin: 6px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.footer-section p:hover {
+    color: #3e5c79;
+    transform: translateX(3px);
+}
+
+/* Logo nederst */
+.footer-bottom {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.footer-bottom img {
+    width: 150px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #2d3a4b;
+}
+
+ a {
+    text-decoration: none; /* fjerner understrek */
+    color: inherit; /* tar fargen fra teksten rundt */
+    cursor: pointer; /* viser klikk-hånd */
+}

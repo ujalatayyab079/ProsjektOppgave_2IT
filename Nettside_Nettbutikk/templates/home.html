@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Shinystar-HomePage{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/CSS_Filer/home.css">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Box oppå bakgrunn -->
+<div class="hero-box">
+    <div class="hero-content">
+        <!-- Tekst -->
+        <div class="hero-text">
+            <h1>Welcome to ShinyStar!</h1>
+            <h2>Discover your perfect style. Be unique, be you.</h2>
+            <p>
+                ShinyStar is your place for custom, high-quality stickers made exactly the way you want.
+                We create stickers for laptops, phones, notebooks, businesses, projects, and personal use.
+                You choose the style - simple, aesthetic, bold, minimal, cute, professional -
+                and we turn it into a clean, finished sticker ready to use.
+            </p>
+            <button>Explore Now</button>
+        </div>
+
+        <!-- Bilde -->
+        <div class="hero-image">
+            <img src="/static/Graphics/Bilder_Vidoer/StickersNettbutikk2.jpg" alt="ShinyStar Stickers">
+        </div>
+    </div>
+</div>
+
+<section class="promo-banner">
+    <div class="promo-text">
+        <h2>Try Before You Buy! 🎉</h2>
+        <p>Get a few free test stickers when you start – see what you love before buying!</p>
+        <h3>🔥 New Sticker Business Offer – 30% OFF your first purchase!</h3>
+    </div>
+</section>
+
+<section class="product-section">
+    <h2 class="section-title">Our Products</h2>
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-card">
+            <div class="product-image" style="background-image:url('/static/Graphics/Stickers/{{ product.image }}')"></div>
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p>{{ product.description }}</p>
+                <span class="price">{{ product.price }},-</span>
+                <div class="product-icons">
+                    <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
+                </div>
+                <button class="buy-btn" onclick="toggleBuy(this)">Buy now</button>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</section>
+
+
+    <div class="view-all-container">
+        <a href="/products">
+            <button class="view-all-btn">View All Products</button>
+        </a>
+    </div>
+</section>
+
+<script src="/static/JS_filer/main.js"></script>
+{% endblock %}

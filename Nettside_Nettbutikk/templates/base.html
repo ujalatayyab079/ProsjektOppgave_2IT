@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+<!-- Font Awesome for ikonene -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <!-- Felles CSS -->
+    <link rel="stylesheet" href="/static/CSS_Filer/style.css">
+
+<!-- Logo på fane -->
+    <link rel="icon" type="image/png" href="/static/Graphics/Logoer_Plakater/ShinystarLogo2Round.svg">
+
+
+    <!-- Mulighet for ekstra CSS per side -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- Inkluder menyen -->
+    {% include "menu.html" %}
+
+    <!-- Hovedinnhold -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-section">
+            <h3>Follow us</h3>
+            <a href="https://www.instagram.com/shinystar_29/"><p>Instagram</p></a>
+            <a href="https://no.pinterest.com/shinystar29/"><p>Pinterest</p></a>
+            <a href="https://www.youtube.com/@shinystar_29"><p>YouTube</p></a>
+            <a href="https://share.google/bBrf5QD1QluN4x9I6"><p>Google</p></a>
+            <a href="https://whatsapp.com/channel/0029Vb6sVnzFsn0ZaC24zy0s"><p>Whatsapp</p></a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Products</h3>
+            <a href="/products"><p>All Products</p></a>
+            <p>Handdmade Stickers</p>
+            <p>Printed Stickers</p>
+            <p>Custom-Made Stickers</p>
+            <p>Own Designed Stickers</p>
+            <p>Own Calligraphy Stickers</p>
+            <p>Custom Hand-Drawn Stickers(Paper)</p>
+            <p>Custom Digital Stickers (iPad)</p>
+            <p>Mini Stickers</p>
+            <p>Themed Sticker Packs</p>
+            <p>Seasonal /Holiday Stickers</p>
+            <p>Planner / Organizational Stickers</p>
+            <p>My Collection</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Inspiration</h3>
+            <p>Blog</p>
+            <p>Social Media Highlights</p>
+            <p>Sticker Hacks & Tips</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Customer Support</h3>
+            <p>Contact Us</p>
+            <p>FAQ</p>
+        </div>
+
+        <div class="footer-bottom">
+            <img src="/static/Graphics/Logoer_Plakater/ShinystarLogo2Round.svg" alt="ShinyStar Logo">
+            <p>© Shinystar_29</p>
+        </div>
+    </footer>
+
+</body>
+</html>
