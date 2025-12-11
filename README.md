@@ -46,15 +46,16 @@ Handlekurv og innlogging legges til senere når nettsiden fungerer.
 - Brukere kan legge produkter i **favoritter** eller **handlekurv**.  
 - Dette håndteres gjennom Flask og databasen, og brukergrensesnittet oppdateres dynamisk via HTML, CSS og JavaScript (knapper, ikoner).  
 
-## 6. Prosessflyt (enkelt)
+## 6. Prosessflyt
 1. Bruker åpner nettsiden i nettleser.  
 2. Nettleseren sender en **HTTP-forespørsel** til Flask-serveren.  
 3. Flask sjekker databasen via SQL og henter produktene.  
 4. Flask sender dataene til HTML-sidene med **Jinja**.  
 5. Nettleseren viser nettsiden med produkter, bilder og priser.  
-6. Bruker kan trykke på hjerte-knappen for favoritter eller handlekurv. Flask håndterer dette, oppdaterer databasen, og siden viser endringen dynamisk.  
+6. Bruker kan trykke på hjerte-knappen for favoritter eller handlekurv. Flask håndterer dette, oppdaterer databasen, og siden viser endringen dynamisk.
+   
 
-## 7. Kompetanse vist
+## 7. Teknologier og verktøy brukt
 - **Backend:** Flask, Python, SQL, databasetilkobling  
 - **Frontend:** HTML, CSS, Jinja, JavaScript  
 - **Database:** Opprette tabeller, hente og oppdatere produkter  
