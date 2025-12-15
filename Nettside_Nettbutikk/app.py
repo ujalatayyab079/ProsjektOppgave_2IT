@@ -1,14 +1,24 @@
 from flask import Flask, render_template  # Importerer Flask
-import mysql.connector  #for å koble til databasen, hente produkter, lagre handlekurv osv
+import mysql.connector  # For å koble til databasen
+from dotenv import load_dotenv
+import os
 
-app = Flask(__name__)  #lager selve nettsiden
+app = Flask(__name__)  # Lager selve nettsiden
 
-#Kobling til MariaDB
-db = mysql.connector.connect(    #Lager en kobling til databasen
-    host="192.168.0.112",
-    user="ujala_2025",
-    password="pakistan07",
-    database="shinystar_shop"
+# Leser sensitiv info fra .env
+load_dotenv()
+
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+
+# Kobling til MariaDB
+db = mysql.connector.connect(
+    host=DB_HOST,
+    user=DB_USER,
+    password=DB_PASSWORD,
+    database=DB_NAME
 )
 
 @app.route('/')   #Kjør funsksjon under
