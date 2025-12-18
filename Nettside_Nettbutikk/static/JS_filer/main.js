@@ -34,27 +34,33 @@ function openFavorites() {
     }
 }
 
-// Toggle hjerte/favoritt
+
+// Favoritt-knapp (hjerte)
 function toggleFavorite(icon) {
-    icon.classList.toggle('active');
-    if (icon.classList.contains('active')) {
-        icon.style.color = 'red';
-        // Legg til favoritt-logikk her
-    } else {
-        icon.style.color = '#2d3a4b';
-        // Fjern fra favoritter her
-    }
+  icon.classList.toggle('active');
+  if (icon.classList.contains('active')) {
+    icon.style.color = 'red';
+    icon.style.transform = 'scale(1.3)';
+    setTimeout(() => icon.style.transform = 'scale(1)', 200); // liten animasjon
+  } else {
+    icon.style.color = '#2d3a4b';
+  }
 }
 
-// Toggle buy-knapp
+// Buy-knapp
 function toggleBuy(button) {
-    button.classList.toggle('added');
-    if (button.classList.contains('added')) {
-        button.textContent = 'Added!';
-    } else {
-        button.textContent = 'Buy now';
-    }
+  button.classList.toggle('added');
+  if (button.classList.contains('added')) {
+    button.textContent = 'Added!';
+    button.style.backgroundColor = '#4caf50';
+    button.style.transform = 'scale(1.1)';
+    setTimeout(() => button.style.transform = 'scale(1)', 200);
+  } else {
+    button.textContent = 'Buy now';
+    button.style.backgroundColor = ''; // tilbake til original
+  }
 }
+
 
 // Vis ekstra info ved klikk på produktkortet
 document.querySelectorAll('.product-card').forEach(card => {
@@ -108,4 +114,21 @@ cartIcon.addEventListener("click", () => {
 
 
 
+//----------------FAQ side-----------//
+document.addEventListener("DOMContentLoaded", function() {
+  const accordions = document.querySelectorAll(".accordion");
 
+  accordions.forEach(acc => {
+    acc.addEventListener("click", function () {
+      const parentFaq = this.parentElement;
+      parentFaq.classList.toggle("active"); // Legger til/fjerner aktiv klasse for fold
+    });
+  });
+});
+
+
+//----------------Explore Now-----------//
+function scrollToProducts() {
+    const productSection = document.querySelector('.product-section');
+    productSection.scrollIntoView({ behavior: 'smooth' });
+}

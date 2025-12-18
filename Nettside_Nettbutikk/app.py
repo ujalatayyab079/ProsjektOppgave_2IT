@@ -1,9 +1,11 @@
-from flask import Flask, render_template  # Importerer Flask
+from flask import Flask, render_template, session, request, jsonify  # Importerer Flask
 import mysql.connector  # For å koble til databasen
 from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)  # Lager selve nettsiden
+app.secret_key = "secret07"  # Viktig for session
+
 
 # Leser sensitiv info fra .env
 load_dotenv()
@@ -44,6 +46,46 @@ def cart():
 @app.route('/favorites')
 def favorites():
     return render_template('favorites.html')
+
+@app.route("/faq")
+def faq():
+    cursor = db.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM faq ORDER BY category, id")
+    faqs = cursor.fetchall()
+    cursor.close()
+    return render_template("faq.html", faqs=faqs)
+
+#--- Handelkurv og favorit ikon----
+@app.before_request
+def make_session_lists():
+    if "favorites" not in session:
+        session["favorites"] = []
+    if "cart" not in session:
+        session["cart"] = []
+
+@app.route("/toggle_favorite", methods=["POST"])
+def toggle_favorite():
+    product_id = request.json.get("product_id")
+    if product_id in session["favorites"]:
+        session["favorites"].remove(product_id)
+        action = "removed"
+    else:
+        session["favorites"].append(product_id)
+        action = "added"
+    session.modified = True
+    return jsonify({"status": "success", "action": action, "favorites": session["favorites"]})
+
+@app.route("/toggle_cart", methods=["POST"])
+def toggle_cart():
+    product_id = request.json.get("product_id")
+    if product_id in session["cart"]:
+        session["cart"].remove(product_id)
+        action = "removed"
+    else:
+        session["cart"].append(product_id)
+        action = "added"
+    session.modified = True
+    return jsonify({"status": "success", "action": action, "cart": session["cart"]})
 
 
 

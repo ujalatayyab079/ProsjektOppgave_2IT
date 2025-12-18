@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}ShinyStar - FAQ{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/CSS_Filer/faq.css">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+/>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <p>Shinystar - FAQ</p>
+  <h1>Frequently Asked Questions</h1>
+
+  {% set shown_categories = [] %}
+  {% for faq in faqs %}
+    {% if faq.category not in shown_categories %}
+      <h2 class="category-title">{{ faq.category }}</h2>
+      {% set _ = shown_categories.append(faq.category) %}
+    {% endif %}
+
+    <div class="faq-item">
+      <button class="question-button">
+        {{ faq.question }} <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="answer-panel">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  const questions = document.querySelectorAll(".question-button");
+
+  questions.forEach(btn => {
+    btn.addEventListener("click", function () {
+      const faqItem = this.parentElement;
+      const panel = this.nextElementSibling;
+
+      // Toggle active class
+      faqItem.classList.toggle("active");
+
+      // Toggle panel visibility
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  });
+</script>
+{% endblock %}
