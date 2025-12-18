@@ -16,7 +16,7 @@ Handlekurv og innlogging legges til senere når nettsiden fungerer.
 ## Kompetanse vist i prosjektet
 - **Drift:** Raspberry Pi, Flask, MariaDB, konfigurering av server  
 - **Utvikling:** Python, HTML/CSS, datastrukturer, database , Backend 
-- **Brukerstøtte:** Brukerveiledning, dokumentasjon på GitHub, testing
+- **Brukerstøtte:** Brukerveiledning, dokumentasjon på GitHub, testing, FAQ side
 
 ## **PROCESS**
 ### 1. Server og webapplikasjon
