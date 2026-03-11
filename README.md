@@ -1,94 +1,95 @@
 # ProsjektOppgave_2IT
 
 Jeg skal lage en **ekte nettbutikk** for min egen business “ShinystaR Stickers”.  
-Nettbutikken skal vise produktene mine (klistremerker), med bilder, navn, pris og beskrivelse.  
+Nettbutikken viser produktene mine (klistremerker) med bilder, navn, pris og beskrivelse.  
 
 Jeg bruker:  
-- **Raspberry Pi** som webserver for å kjøre nettsiden  
+- **Raspberry Pi** som webserver  
 - **MariaDB** for å lagre produkter, brukere og handlekurv  
-- **Flask (Python)** til å lage nettsiden og koble den til databasen/Backend 
-- **HTML og CSS** for design, layout og strukturen av nettsiden
+- **Flask (Python)** til å lage nettsiden og koble til databasen  
+- **HTML og CSS** for design, layout og struktur  
 
+## DEL#01
 ## Prototype / MVP
-Første versjon (MVP) viser noen produkter på forsiden med bilde, navn og pris.(Jeg begynner enkelt først, bare med å lage 2-3 produkt først)  
+Første versjon (MVP) viser noen produkter på forsiden med bilde, navn og pris (2-3 produkter).  
 Handlekurv og innlogging legges til senere når nettsiden fungerer.  
 
-## Kompetanse vist i prosjektet
-- **Drift:** Raspberry Pi, Flask, MariaDB, konfigurering av server  
-- **Utvikling:** Python, HTML/CSS, datastrukturer, database , Backend 
-- **Brukerstøtte:** Brukerveiledning, dokumentasjon på GitHub, testing, FAQ side
+## Kompetanse vist
+- **Drift:** Raspberry Pi, Flask, MariaDB, serverkonfigurasjon  
+- **Utvikling:** Python, HTML/CSS, datastrukturer, database, backend  
+- **Brukerstøtte:** Brukerveiledning, dokumentasjon på GitHub, testing, FAQ-side  
 
-## **PROCESS**
-### 1. Server og webapplikasjon
-- **Raspberry Pi** brukes som webserver for å kjøre nettsiden.  
-- **Flask (Python)** brukes til å lage webapplikasjonen, som håndterer **HTTP-forespørsler** fra nettlesere (f.eks. når en bruker åpner nettsiden eller klikker på et produkt).  
-- Flask kobles til **MariaDB** for å hente og lagre data. Flask fungerer som **Backend**, mens HTML/CSS fungerer som **Frontend**.  
-
-### 2. Database
-- **MariaDB** lagrer alle data for nettbutikken:  
-  - Produkter (navn, beskrivelse, pris, bilde)  
-  - Brukere (for fremtidig innlogging)  
-  - Handlekurv og favoritter  
-- Flask sender SQL-spørringer til databasen for å hente, legge til eller oppdatere data.  
-- Produktene som legges til i databasen vises automatisk på nettsiden gjennom **Jinja-templating**.
-
-### 3. Frontend og visning av data
-- **HTML** lager strukturen på nettsiden, som seksjoner for produkter, hero-bilder, FAQ-seksjon og knappene for handlekurv og favoritter.  
-- **CSS** brukes for layout, styling, farger og responsiv design.  
-- **Jinja** brukes til å sette inn data fra databasen direkte i HTML, slik at produktene vises dynamisk.  
-
-### 4. Dynamisk innhold
-- Forsiden viser et begrenset antall produkter (f.eks. 4) ved hjelp av SQL-spørring med `LIMIT`.  
-- Produktsiden viser alle produkter.  
-- Når nye produkter legges til databasen, blir de automatisk synlige på nettsiden uten å endre koden.  
-
-### 5. Interaktivitet
-- Brukere kan legge produkter i **favoritter** eller **handlekurv**.  
-- Dette håndteres gjennom Flask og databasen, og brukergrensesnittet oppdateres dynamisk via HTML, CSS og JavaScript (knapper, ikoner).  
-- **Fremtidig funksjonalitet:**  
-  - Fungerende favoritt-knapp som legger til/fjerner produkter i favoritter.  
-  - Fungerende handlekurv-knapp som legger til/fjerner produkter i handlekurv.  
-  - Mulighet for å slette produkter direkte fra handlekurven.  
-
-### 6. FAQ-side
-- FAQ-siden viser ofte stilte spørsmål delt inn i kategorier.  
-- Spørsmålene vises som foldbare elementer (accordion), slik at brukeren kan klikke for å se svaret.  
-- FAQ-data hentes fra MariaDB via Flask, og nye spørsmål vises automatisk.  
-
-### 7. Prosessflyt
-1. Bruker åpner nettsiden i nettleser.  
-2. Nettleseren sender en **HTTP-forespørsel** til Flask-serveren.  
-3. Flask sjekker databasen via SQL og henter produktene eller FAQ-data.  
-4. Flask sender dataene til HTML-sidene med **Jinja**.  
-5. Nettleseren viser nettsiden med produkter, bilder og priser, eller FAQ-seksjonen.  
-6. Bruker kan trykke på hjerte-knappen for favoritter, handlekurv-knappen, eller åpne FAQ-spørsmål. Flask oppdaterer session/data, og siden viser endringen dynamisk.  
-
-## 8. Teknologier og verktøy brukt
-- **Backend:** Flask, Python, SQL, databasetilkobling  
+## Teknologier og verktøy
+- **Backend:** Flask, Python, SQL  
 - **Frontend:** HTML, CSS, Jinja, JavaScript  
 - **Database:** Opprette tabeller, hente og oppdatere produkter og FAQ  
 - **Drift:** Raspberry Pi, serverkonfigurasjon  
-- **Interaktivitet:** Dynamiske sider, bruk av knapper, ikoner og foldbare FAQ-elementer
+- **Interaktivitet:** Dynamiske sider, knapper, ikoner, FAQ-elementer
+  
+## Prosess
+### Server og webapplikasjon
+- Flask håndterer **HTTP-forespørsler** og fungerer som backend.  
+- Flask kobles til MariaDB for å hente og lagre data.  
+- HTML/CSS utgjør frontend.  
 
-# Seksjon 2: Videre utvikling / fremtidige planer
+### Database
+- MariaDB lagrer:  
+  - Produkter (navn, beskrivelse, pris, bilde)  
+  - Brukere (for innlogging)  
+  - Handlekurv og favoritter  
+- Flask sender SQL-spørringer for å hente, legge til eller oppdatere data.  
+- Produktene vises automatisk via **Jinja-templating**.  
 
-## Handlekurv og favoritter
-- Fullføre fungerende **handlekurv**: brukere kan legge til, fjerne og se produkter.  
-- Fullføre fungerende **favoritter**: brukere kan lagre ønskede produkter.  
+### Frontend og visning
+- HTML lager struktur: seksjoner for produkter, hero-bilder, FAQ, handlekurv og favoritter  
+- CSS gir layout, styling og responsivt design  
+- Jinja setter inn database-data dynamisk  
 
-## Søk og brukerprofiler
-- Gjøre **search bar** funksjonell for å søke i produkter i databasen.  
-- Implementere **innlogging og brukerprofiler**, med sikker lagring av data i MariaDB.  
+### Dynamisk innhold
+- Forsiden viser et begrenset antall produkter med SQL `LIMIT`  
+- Produktsiden viser alle produkter  
+- Nye produkter i databasen vises automatisk uten å endre koden  
 
-## Tilgjengelighet og testing
-- Sørge for at nettsiden kan **åpnes på andre maskiner**, via IP-adresse eller domenenavn.  
-- Teste nettsiden i **virtuelle maskiner** eller med testbrukere for å sikre funksjonalitet før publisering.  
+### Interaktivitet
+- Brukere kan legge produkter til **favoritter** eller **handlekurv**  
+- Flask og databasen håndterer data, mens frontend oppdateres dynamisk  
+- Fremtidig funksjonalitet:  
+  - Favoritt-knapp som legger til/fjerner produkter  
+  - Handlekurv-knapp som legger til/fjerner produkter  
+  - Slette produkter fra handlekurven  
 
-## Brukerveiledning og dokumentasjon
-- Lage **brukerveiledning eller video** som viser hvordan nettsiden fungerer, inkludert FAQ og handlekurv.  
+### FAQ-side
+- Spørsmål vises som foldbare elementer (accordion)  
+- Data hentes fra MariaDB via Flask  
+- Nye spørsmål vises automatisk  
 
-## Utvidelser og forbedringer
-- Utvide antall produkter og kategorier.  
-- Forbedre **design og layout**, inkludert responsiv design for mobil og desktop.  
-- Eventuelt legge til **betalingsløsning** i fremtidige versjoner.  
-- Forbedre brukeropplevelse med **interaktive elementer**, som dynamiske knapper, hover-effekter og visuelle indikatorer.
+### Prosessflyt
+1. Bruker åpner nettsiden  
+2. Nettleser sender HTTP-forespørsel til Flask  
+3. Flask henter data fra MariaDB  
+4. Flask sender data til HTML med Jinja  
+5. Nettleser viser nettsiden  
+6. Bruker kan interagere med favoritter, handlekurv eller FAQ, og siden oppdateres dynamisk  
+
+## DEL#02
+## Videre utvikling / fremtidige planer
+### Handlekurv og favoritter
+- Fullføre fungerende handlekurv  
+- Fullføre fungerende favoritter  
+
+### Søk og brukerprofiler
+- Gjøre search bar funksjonell  
+- Implementere innlogging og brukerprofiler  
+
+### Tilgjengelighet og testing
+- Nettsiden skal kunne åpnes på andre maskiner  
+- Teste nettsiden i virtuelle maskiner eller med testbrukere  
+
+### Brukerveiledning og dokumentasjon
+- Lage brukerveiledning eller video for nettsiden  
+
+### Utvidelser og forbedringer
+- Flere produkter og kategorier  
+- Forbedre design og layout (responsivt for mobil og desktop)  
+- Eventuelt betalingsløsning  
+- Forbedre brukeropplevelse med interaktive elementer  
