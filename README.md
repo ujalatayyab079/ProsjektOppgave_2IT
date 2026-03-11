@@ -70,4 +70,25 @@ Handlekurv og innlogging legges til senere når nettsiden fungerer.
 - **Drift:** Raspberry Pi, serverkonfigurasjon  
 - **Interaktivitet:** Dynamiske sider, bruk av knapper, ikoner og foldbare FAQ-elementer
 
+# Seksjon 2: Videre utvikling / fremtidige planer
 
+## Handlekurv og favoritter
+- Fullføre fungerende **handlekurv**: brukere kan legge til, fjerne og se produkter.  
+- Fullføre fungerende **favoritter**: brukere kan lagre ønskede produkter.  
+
+## Søk og brukerprofiler
+- Gjøre **search bar** funksjonell for å søke i produkter i databasen.  
+- Implementere **innlogging og brukerprofiler**, med sikker lagring av data i MariaDB.  
+
+## Tilgjengelighet og testing
+- Sørge for at nettsiden kan **åpnes på andre maskiner**, via IP-adresse eller domenenavn.  
+- Teste nettsiden i **virtuelle maskiner** eller med testbrukere for å sikre funksjonalitet før publisering.  
+
+## Brukerveiledning og dokumentasjon
+- Lage **brukerveiledning eller video** som viser hvordan nettsiden fungerer, inkludert FAQ og handlekurv.  
+
+## Utvidelser og forbedringer
+- Utvide antall produkter og kategorier.  
+- Forbedre **design og layout**, inkludert responsiv design for mobil og desktop.  
+- Eventuelt legge til **betalingsløsning** i fremtidige versjoner.  
+- Forbedre brukeropplevelse med **interaktive elementer**, som dynamiske knapper, hover-effekter og visuelle indikatorer.
