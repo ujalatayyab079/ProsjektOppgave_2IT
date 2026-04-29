@@ -71,6 +71,8 @@ I prosjektet skal jeg bruke følgende verktøy og teknologier:
 - MariaDB for lagring og håndtering av data
 - Visual Studio Code som utviklingsverktøy
 - Git/GitHub for versjonskontroll (hvis brukt)
+- GitHub Kanban for planlegging, oppgaveliste og dokumentasjon av arbeid underveis  
+
 
 
 
