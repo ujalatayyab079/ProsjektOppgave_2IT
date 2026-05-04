@@ -132,3 +132,5 @@ function scrollToProducts() {
     const productSection = document.querySelector('.product-section');
     productSection.scrollIntoView({ behavior: 'smooth' });
 }
+
+

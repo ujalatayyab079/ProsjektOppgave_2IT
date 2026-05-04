@@ -89,6 +89,6 @@ def toggle_cart():
 
 
 
-if __name__=="__main__":  #Kodem kan kun kjøres ved filen app.py men ikke direkte.
+if __name__=="__main__":  #Koden kan kun kjøres ved filen app.py men ikke direkte.
     app.run(debug=True)  # Nettserveren på  datamaskinen
 

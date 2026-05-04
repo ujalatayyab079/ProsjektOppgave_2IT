@@ -4,11 +4,17 @@
 
 {% block extra_css %}
 <link rel="stylesheet" href="/static/CSS_Filer/home.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Chewy&display=swap" rel="stylesheet">
+
+
+
 {% endblock %}
 
 {% block content %}
 <!-- Hero Box oppå bakgrunn -->
-<div class="hero-box">
+<header class="hero-box">
     <div class="hero-content">
         <!-- Tekst -->
         <div class="hero-text">
@@ -30,41 +36,148 @@
             <img src="/static/Graphics/Bilder_Vidoer/StickersNettbutikk2.jpg" alt="ShinyStar Stickers">
         </div>
     </div>
-</div>
+</header>
 
 <section class="promo-banner">
-    <div class="promo-text">
-        <h2>Try Before You Buy! 🎉</h2>
-        <p>Get a few free test stickers when you start – see what you love before buying!</p>
-        <h3>🔥 New Sticker Business Offer – 30% OFF your first purchase!</h3>
+
+    <div class="promo-content">
+
+        <!-- VENSTRE: GIF -->
+        <div class="promo-gif">
+            <img src="/static/Graphics/Bilder_Vidoer/%OFFgif.gif">
+        </div>
+
+        <!-- HØYRE: TEKST -->
+        <div class="promo-text">
+            <h2>Try Before You Buy! 🎉</h2>
+            <p>Get a few free test stickers when you start – see what you love before buying!</p>
+            <h3>🔥 New Sticker Business Offer – 30% OFF your first purchase!</h3>
+        </div>
+
     </div>
+
 </section>
+
+<section class="why-choose">
+    <h2>Why Choose ShinyStar?</h2>
+
+    <div class="why-choose-container">
+
+        <div class="why-choose-card">
+            <img src="/static/Graphics/Bilder_Vidoer/1.png" alt="Custom Designs">
+            <h3>Custom Designs</h3>
+            <p>
+                You choose the style, colors, and idea - we create stickers tailored exactly to your vision.
+            </p>
+        </div>
+
+        <div class="why-choose-card">
+            <img src="/static/Graphics/Bilder_Vidoer/2.png" alt="Quality Options">
+            <h3>Quality Options</h3>
+            <p>
+                We offer different quality levels, from simple and affordable to more premium finishes, so you can choose what fits your needs.
+            </p>
+        </div>
+
+        <div class="why-choose-card">
+            <img src="/static/Graphics/Bilder_Vidoer/3 (3).png" alt="Returns">
+            <h3>Returns & Feedback</h3>
+            <p>
+                If you're not satisfied, you can contact us with feedback. You may return the product or keep it while helping us improve future designs.
+            </p>
+        </div>
+
+        <div class="why-choose-card">
+            <img src="/static/Graphics/Bilder_Vidoer/4.png" alt="Affordable Pricing">
+            <h3>Affordable Pricing</h3>
+            <p>
+                We aim to keep our prices flexible and accessible, so you can get custom stickers without spending too much.
+            </p>
+        </div>
+
+        <div class="why-choose-card">
+            <img src="/static/Graphics/Bilder_Vidoer/5.png" alt="Creative & Personal">
+            <h3>Creative & Personal</h3>
+            <p>
+                Every design is made with creativity and attention to detail, giving you something unique and personal.
+            </p>
+        </div>
+
+    </div>
+</section> 
 
 <section class="product-section">
-    <h2 class="section-title">Our Products</h2>
-    <div class="product-grid">
-        {% for product in products %}
-        <div class="product-card">
-            <div class="product-image" style="background-image:url('/static/Graphics/Stickers/{{ product.image }}')"></div>
-            <div class="product-info">
-                <h3>{{ product.name }}</h3>
-                <p>{{ product.description }}</p>
-                <span class="price">{{ product.price }},-</span>
-                <div class="product-icons">
-                    <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
+    <div class="product-container">
+        <h2 class="section-title">Our Products</h2>
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card">
+                <div class="product-image" style="background-image:url('/static/Graphics/Stickers/{{ product.image }}')"></div>
+                <div class="product-info">
+                    <h3>{{ product.name }}</h3>
+                    <p>{{ product.description }}</p>
+                    <span class="price">{{ product.price }},-</span>
+                    <div class="product-icons">
+                        <i class="fa-solid fa-heart" onclick="toggleFavorite(this)"></i>
+                    </div>
+                    <button class="buy-btn" onclick="toggleBuy(this)">Buy now</button>
                 </div>
-                <button class="buy-btn" onclick="toggleBuy(this)">Buy now</button>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
+
+        <div class="view-all-container">
+            <a href="/products">
+                <button class="view-all-btn">View All Products</button>
+            </a>
+        </div>
     </div>
 </section>
 
+<section class="professional-rate">
+    <div class="rate-inner">
 
-    <div class="view-all-container">
-        <a href="/products">
-            <button class="view-all-btn">View All Products</button>
-        </a>
+        <!-- Venstre: tekst -->
+        <div class="rate-info">
+            <h2>Rate ShinyStar</h2>
+            <p>Share your experience with our stickers. Your feedback helps us improve and create better designs!</p>
+        </div>
+
+        <!-- Høyre: interaktive stjerner -->
+        <div class="rate-input">
+            <p>Your Rating:</p>
+            <div class="stars">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+            <p class="feedback">Click a star to rate</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="poster-section">
+    <div class="poster-content">
+
+        <!-- Plakat / bilde -->
+        <div class="poster-image">
+            <img src="/static/Graphics/Logoer_Plakater/ShinyStar-Poster.jpg" alt="ShinyStar Poster">
+        </div>
+
+        <!-- Info / Google Form -->
+        <div class="poster-info">
+            <h2>Buy custom orders</h2>
+            <p> Looking for something unique? Place a custom order and get exactly what you want! 
+        Fill out the form below with your ideas, design preferences, and details, and we’ll create a personalized sticker just for you. </p>
+
+            <!-- Google Form embed -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6510uYqOruQWebVU2zW-9eyoCHtaGwxwb-_F0towPGCbDpw/viewform?usp=dialog" 
+                    width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+
     </div>
 </section>
 

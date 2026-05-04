@@ -2,8 +2,8 @@
 /* ------------------ PRODUCT SECTION ------------------ */
 .product-section {
     background: #ffffff;
-    padding: 60px 40px;
-    max-width: 1400px;
+    padding: 40px 20px;
+    max-width: 1100px;
     margin: auto;
 }
 
@@ -18,14 +18,16 @@
 /* ---------------- PRODUCT GRID ---------------- */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    
 }
 
 /* ---------------- PRODUCT CARD ---------------- */
 .product-card {
     background: rgba(255,255,255,0.8);
     backdrop-filter: blur(10px);
+    padding: 5px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
@@ -39,11 +41,13 @@
 
 /* Product image using background */
 .product-image {
+    border-radius: 20px;
     width: 100%;
-    height: 390px;
+    height: 260px;
     background-size: cover;
     background-position: center;
 }
+
 
 /* Info area */
 .product-info {
@@ -52,13 +56,13 @@
 }
 
 .product-info h3 {
-    font-size: 22px;
+    font-size: 18px;
     color: #2d3a4b;
     margin-bottom: 10px;
 }
 
 .product-info p {
-    font-size: 16px;
+    font-size: 14px;
     color: #556579;
     margin-bottom: 12px;
 }
@@ -76,8 +80,8 @@
     color: #fff;
     border: none;
     border-radius: 8px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -96,8 +100,8 @@
 
 /* Hjerte ikon */
 .product-icons i {
-    font-size: 24px;
-    color: #2d3a4b;
+    font-size: 20px;
+    color: #3e4f63;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -124,6 +128,3 @@
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-
-
